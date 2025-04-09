@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  test-web-server:
+    image: metreniuk/test-web-server:latest
+    container_name: test-web-server
+    restart: always
+    ports:
+      - "80:3000" # map port 80 on the host to port 3000 in the container
+      - "443:3000" # map port 443 on the host to port 3000 in the container (HTTPS)
+    environment:
+      NODE_ENV: production
+    # If you have more services, add them here
